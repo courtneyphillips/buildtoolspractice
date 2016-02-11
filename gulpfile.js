@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
+var del = require('del');
 
 var buildProduction = false;
 if(utilities.env.production === true){
