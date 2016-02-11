@@ -74,7 +74,7 @@ gulp.task('serve', function(){
 
 gulp.task('buildCSS', function(){
   return gulp.src('scss/*.scss')
-  .pipe(sourcemapts.init())
+  .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('css'));
