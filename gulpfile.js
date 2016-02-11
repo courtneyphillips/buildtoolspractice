@@ -70,6 +70,7 @@ gulp.task('serve', function(){
     }
   });
   gulp.watch(['js/*.js', 'test/*.js', 'index.html', 'weather.html'], ['js-reload']);
+  gulp.watch('app/scss/*.scss', ['buildCSS']);
 });
 
 gulp.task('buildCSS', function(){
