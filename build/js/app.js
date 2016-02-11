@@ -1,11 +1,1 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-$(document).ready(function(){
-  $('#signup').submit(function(event){
-    event.preventDefault();
-    var email = $('#email').val();
-    $('#signup').hide();
-    $('#solution').prepend('<p>Thank you,' + email + 'has been added to our mailing list!</p>');
-  });
-});
-
-},{}]},{},[1]);
+!function r(e,n,t){function i(u,f){if(!n[u]){if(!e[u]){var a="function"==typeof require&&require;if(!f&&a)return a(u,!0);if(o)return o(u,!0);var p=new Error("Cannot find module '"+u+"'");throw p.code="MODULE_NOT_FOUND",p}var c=n[u]={exports:{}};e[u][0].call(c.exports,function(r){var n=e[u][1][r];return i(n?n:r)},c,c.exports,r,e,n,t)}return n[u].exports}for(var o="function"==typeof require&&require,u=0;u<t.length;u++)i(t[u]);return i}({1:[function(r,e,n){$(document).ready(function(){$("#signup").submit(function(r){r.preventDefault();var e=$("#email").val();$("#signup").hide(),$("#solution").prepend("<p>Thank you, "+e+"has been added to our mailing list!</p>")})})},{}]},{},[1]);

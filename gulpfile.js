@@ -23,6 +23,12 @@ gulp.task('jsBrowserify', ['concatInterface'], function(){
   .pipe(gulp.dest('./build/js'));
 });
 
+gulp.task('minifyScripts', ['jsBrowserify'], function(){
+  return gulp.src('./build/js/app.js')
+  .pipe(uglify())
+  .pipe(gulp.dest("./build/js"));
+});
+
 gulp.task('watchJs', function(){
   gulp.watch(['js/*.js', 'test/*.js'], ['runTests', 'jsBrowserify']);
 });
