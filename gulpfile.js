@@ -13,7 +13,13 @@ if(utilities.env.production === true){
   buildProduction = true;
 };
 
-gulp.task('runTests', function(){
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js', 'test/*.js'])
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
+
+gulp.task('test', ['jshint'], function(){
   return gulp.src('test/ping-pong-tests.js')
   .pipe(mocha({reporter: 'nyan'}));
 });
@@ -50,5 +56,5 @@ gulp.task("clean", function(){
 });
 
 gulp.task('watchJs', function(){
-  gulp.watch(['js/*.js', 'test/*.js'], ['runTests', 'jsBrowserify']);
+  gulp.watch(['js/*.js', 'test/*.js'], ['test', 'jsBrowserify']);
 });
