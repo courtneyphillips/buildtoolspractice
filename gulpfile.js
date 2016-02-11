@@ -3,6 +3,7 @@ var mocha = require('gulp-mocha');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('runTests', function(){
   return gulp.src('test/ping-pong-tests.js')
