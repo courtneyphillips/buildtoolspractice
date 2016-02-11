@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
+var browserSync = require('browser-sync').create();
 
 var buildProduction = false;
 if(utilities.env.production === true){
