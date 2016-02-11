@@ -70,6 +70,6 @@ gulp.task('serve', function(){
   gulp.watch(['js/*.js', 'test/*.js'], ['js-reload']);
 });
 
-gulp.task('js-reload', ['buildJs'], browserSync.reload);
+gulp.task('js-reload', ['build'], browserSync.reload);
 
 gulp.task('default', ['watchJs']);
