@@ -4,6 +4,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var utilities = require('gulp-util');
 
 gulp.task('runTests', function(){
   return gulp.src('test/ping-pong-tests.js')
