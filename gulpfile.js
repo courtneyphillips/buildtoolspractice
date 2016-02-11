@@ -60,4 +60,16 @@ gulp.task('watchJs', function(){
   gulp.watch(['js/*.js', 'test/*.js'], ['test', 'jsBrowserify']);
 });
 
+gulp.task('serve', function(){
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+  gulp.watch(['js/*.js', 'test/*.js'], ['js-reload']);
+});
+
+gulp.task('js-reload', ['buildJs'], browserSync.reload);
+
 gulp.task('default', ['watchJs']);
