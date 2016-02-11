@@ -9,11 +9,11 @@ gulp.task('runTests', function(){
 });
 
 gulp.task('watchJs', function(){
-  gulp.watch(['js/*.js', 'test/*.js'], ['runTests']);
+  gulp.watch(['js/*.js', 'test/*.js'], ['runTests', 'jsBrowserify']);
 });
 
 gulp.task('jsBrowserify', function(){
-  return browserify({ entries: ['./js/ping-pong-interface.js']})
+  return browserify({ entries: ['./js/browser.js']})
   .bundle()
   .pipe(source('app.js'))
   .pipe(gulp.dest('./build/js'));
