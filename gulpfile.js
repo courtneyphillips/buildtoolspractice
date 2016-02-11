@@ -58,3 +58,5 @@ gulp.task("clean", function(){
 gulp.task('watchJs', function(){
   gulp.watch(['js/*.js', 'test/*.js'], ['test', 'jsBrowserify']);
 });
+
+gulp.task('default', ['watchJs']);
