@@ -44,6 +44,10 @@ gulp.task("build", function(){
   }
 });
 
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
 gulp.task('watchJs', function(){
   gulp.watch(['js/*.js', 'test/*.js'], ['runTests', 'jsBrowserify']);
 });
