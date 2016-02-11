@@ -78,7 +78,8 @@ gulp.task('buildCSS', function(){
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('css'));
+  .pipe(gulp.dest('css'))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('js-reload', ['build'], browserSync.reload);
