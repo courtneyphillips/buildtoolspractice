@@ -67,7 +67,7 @@ gulp.task('serve', function(){
       index: "index.html"
     }
   });
-  gulp.watch(['js/*.js', 'test/*.js'], ['js-reload']);
+  gulp.watch(['js/*.js', 'test/*.js', 'index.html', 'weather.html'], ['js-reload']);
 });
 
 gulp.task('js-reload', ['build'], browserSync.reload);
