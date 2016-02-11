@@ -72,6 +72,14 @@ gulp.task('serve', function(){
   gulp.watch(['js/*.js', 'test/*.js', 'index.html', 'weather.html'], ['js-reload']);
 });
 
+gulp.task('buildCSS', function(){
+  return gulp.src('scss/*.scss')
+  .pipe(sourcemapts.init())
+  .pipe(sass())
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('css'));
+});
+
 gulp.task('js-reload', ['build'], browserSync.reload);
 
 gulp.task('default', ['watchJs']);
