@@ -6,6 +6,11 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 
+var buildProduction = false;
+if(utilities.env.production === true){
+  buildProduction = true;
+};
+
 gulp.task('runTests', function(){
   return gulp.src('test/ping-pong-tests.js')
   .pipe(mocha({reporter: 'nyan'}));
@@ -28,6 +33,14 @@ gulp.task('minifyScripts', ['jsBrowserify'], function(){
   return gulp.src('./build/js/app.js')
   .pipe(uglify())
   .pipe(gulp.dest("./build/js"));
+});
+
+gulp.task("build", function(){
+  if (buildProduction){
+    gulp.start('minifyScripts');
+  } else {
+    gulp.start('jsBrowserify');
+  }
 });
 
 gulp.task('watchJs', function(){
